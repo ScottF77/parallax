@@ -302,7 +302,7 @@
         var isVideo = this.element.oncanplay !== undefined;
 
         if (isImage && !this.element.complete) {
-          this.element.onload = this.element.complete = function () {
+          this.element.onload = function () {
             return _this4.onElementLoaded();
           };
         } else if (isVideo && !this.element.oncanplay) {

@@ -37,7 +37,7 @@ export default class Canvas {
     const isVideo = this.element.oncanplay !== undefined
 
     if (isImage && !this.element.complete) {
-      this.element.onload = this.element.complete = () => this.onElementLoaded()
+      this.element.onload = () => this.onElementLoaded()
     } else if (isVideo && !this.element.oncanplay) {
       this.element.onload = this.element.oncanplay = () => this.onElementLoaded()
     } else {
